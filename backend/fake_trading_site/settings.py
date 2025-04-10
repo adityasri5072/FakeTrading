@@ -122,6 +122,22 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Allow frontend to access backend
 ]
 
+# Allow credentials to be included in requests
+CORS_ALLOW_CREDENTIALS = True
+
+# Allow all headers in requests
+CORS_ALLOW_ALL_HEADERS = True
+
+# Allow all methods
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
 # Django REST Framework configuration
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -131,3 +147,11 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ),
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'adityasrinivas700@gmail.com'       # Replace with your Gmail address
+EMAIL_HOST_PASSWORD = 'hith gbys mnre snwk'        # Replace with your app password or Gmail password
+DEFAULT_FROM_EMAIL = 'adityasrinivas700@gmail.com'
